@@ -23,6 +23,7 @@ public class Signup extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
 		String name = request.getParameter("name");
 		String nickname = request.getParameter("nickname");
 		String tele = request.getParameter("tele");

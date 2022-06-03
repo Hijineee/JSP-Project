@@ -26,6 +26,7 @@ public class Emailcheck extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		if (request.getParameter("email") != null) {
 			String email = request.getParameter("email");
+			
 			SignupDAO dao = new SignupDAO();
 			int result = 1;
 			result = dao.emailCheck(email);
