@@ -13,36 +13,36 @@ import com.ssipdduck.DTO.SignupDTO;
 
 @WebServlet("/signup")
 public class Signup extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+   private static final long serialVersionUID = 1L;
        
     public Signup() {
         super();
     }
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	}
+   protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+   }
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("utf-8");
-		String name = request.getParameter("name");
-		String nickname = request.getParameter("nickname");
-		String tele = request.getParameter("tele");
-		String email = request.getParameter("email");
-		String password = request.getParameter("password");
-		String password2 = request.getParameter("password2");
-		
-		SignupDAO dao = new SignupDAO();
-		
-		SignupDTO dto = new SignupDTO();
-		dto.setName(name);
-		dto.setNickname(nickname);
-		dto.setEmail(email);
-		dto.setTele(tele);
-		dto.setPassword(password);
-		
-		dao.signup(dto);
-		response.sendRedirect("./login.jsp");
-		
-	}
+   protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	   request.setCharacterEncoding("utf-8");
+      String name = request.getParameter("name");
+      String nickname = request.getParameter("nickname");
+      String tele = request.getParameter("tele");
+      String email = request.getParameter("email");
+      String password = request.getParameter("password");
+      String password2 = request.getParameter("password2");
+      
+      SignupDAO dao = new SignupDAO();
+      
+      SignupDTO dto = new SignupDTO();
+      dto.setName(name);
+      dto.setNickname(nickname);
+      dto.setEmail(email);
+      dto.setTele(tele);
+      dto.setPassword(password);
+      
+      dao.signup(dto);
+      response.sendRedirect("./login.jsp");
+      
+   }
 
 }
